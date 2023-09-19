@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
+import { MatCarouselModule } from 'ng-mat-carousel';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 
@@ -19,7 +22,9 @@ import {MatCardModule} from '@angular/material/card';
     AppRoutingModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatCarouselModule.forRoot(),
+    BrowserAnimationsModule
   
   ],
   providers: [],
