@@ -19,13 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatCardModule,
-    MatCarouselModule.forRoot(),
-    BrowserAnimationsModule
-  
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
