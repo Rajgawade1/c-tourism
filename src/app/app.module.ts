@@ -4,6 +4,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgIf } from '@angular/common';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { DetailsComponent } from './details/details.component';
+import { PackageComponent } from './package/package.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -11,7 +16,12 @@ import { NgIf } from '@angular/common';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    DetailsComponent,
+    PackageComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
