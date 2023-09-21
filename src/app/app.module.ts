@@ -10,6 +10,7 @@ import { DetailsComponent } from './details/details.component';
 import { PackageComponent } from './package/package.component';
 import { AboutComponent } from './about/about.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AttractionsComponent } from './attractions/attractions.component';
 
 
 
@@ -20,7 +21,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     DetailsComponent,
     PackageComponent,
-    AboutComponent
+    AboutComponent,
+    AttractionsComponent
   ],
   imports: [
     BrowserModule,
