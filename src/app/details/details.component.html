@@ -1,9 +1,9 @@
 
-<div class="container mt-5 ">
+<div class="">
     <ngb-carousel>
         <ng-template ngbSlide>
             <div class="picsum-img-wrapper">
-                <img src="assets/img1.png" alt="Random first slide" class="img-fluid-carousel" height="200" />
+                <img src="assets/pargad.png" alt="Random first slide" class="img-fluid-carousel" height="200" />
             </div>
             <div class="carousel-caption">
                 <h3>Serene waterfall from Pargad</h3>
@@ -12,7 +12,7 @@
         </ng-template>
         <ng-template ngbSlide>
             <div class="picsum-img-wrapper">
-                <img src="assets/IMG2.png" alt="Random first slide" class="img-fluid-carousel" height="200" />
+                <img src="assets/tilari.png" alt="Random first slide" class="img-fluid-carousel" height="200" />
             </div>
             <div class="carousel-caption">
                 <h3>Breathtaking view of Tilari Ghat</h3>
@@ -21,7 +21,7 @@
         </ng-template>
         <ng-template ngbSlide>
             <div class="picsum-img-wrapper">
-                <img src="assets/img3.png" alt="Random first slide" class="img-fluid-carousel" height="200" />
+                <img src="assets/hornbill.png" alt="Random first slide" class="img-fluid-carousel" height="200" />
             </div>
             <div class="carousel-caption">
                 <h3>Paradise for hornbill sighting</h3>
@@ -42,38 +42,38 @@
             <div class="row">
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/img1.png" alt="Card image cap">
+                        <img class="card-img-top" src="assets/pargad.png" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Tilari</h5>
                             <p class="card-text">Tilari Nagar is home to an impressive selection of attractions and
                                 experiences, making it well worth a visit.</p>
-                            <a routerLink="/attractions" class="btn btn-primary">Explore</a>
+                            <a [routerLink]="['/attractions','tilari']" class="btn btn-primary">Explore</a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/IMG2.png" alt="Card image cap">
+                        <img class="card-img-top" src="assets/tilari.png" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Pargad</h5>
                             <p class="card-text"> Pargad is a beautiful fort located on the border of Maharashtra and
                                 Goa
                                 states. The fort is spread across 48 sq km area. The fort has fortified cut walls to its
                                 east, west and north sides.</p>
-                            <a routerLink="/attractions" class="btn btn-primary">Explore</a>
-                        </div>
+                                <a [routerLink]="['/attractions','pargad']" class="btn btn-primary">Explore</a>
+                            </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/img3.png" alt="Card image cap">
+                        <img class="card-img-top" src="assets/hornbill.png" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">Amboli</h5>
                             <p class="card-text">Amboli is a famous hill station in South Maharashtra, India. It is the
                                 last
                                 hill station before the seaside highlands of Goa. Amboli lies in the Sahyadri Hills </p>
-                            <a routerLink="/attractions" class="btn btn-primary">Explore</a>
-                        </div>
+                                <a [routerLink]="['/attractions','amboli']" class="btn btn-primary">Explore</a>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -96,7 +96,7 @@
                             <h5 class="card-title">Explore Chandgad</h5>
                             <p class="card-text">Tilari Nagar is home to an impressive selection of attractions and
                                 experiences, making it well worth a visit.</p>
-                            <a routerLink="/package" class="btn btn-primary">Explore</a>
+                            <a [routerLink]="['/package','package1']" class="btn btn-primary">Explore</a>
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                                 Goa
                                 states. The fort is spread across 48 sq km area. The fort has fortified cut walls to its
                                 east, west and north sides.</p>
-                            <a routerLink="/package" class="btn btn-primary">Explore</a>
+                            <a [routerLink]="['/package','package2']" class="btn btn-primary">Explore</a>
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                             <p class="card-text">Amboli is a famous hill station in South Maharashtra, India. It is the
                                 last
                                 hill station before the seaside highlands of Goa. Amboli lies in the Sahyadri Hills </p>
-                            <a routerLink="/package" class="btn btn-primary">Explore</a>
+                            <a [routerLink]="['/package','package3']" class="btn btn-primary">Explore</a>
                         </div>
                     </div>
                 </div>

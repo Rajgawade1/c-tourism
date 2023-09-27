@@ -21,6 +21,7 @@
     "@angular/router": "^16.2.5",
     "@ng-bootstrap/ng-bootstrap": "^15.1.1",
     "@popperjs/core": "^2.11.6",
+    "aws-sdk": "^2.1465.0",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.11.1",
     "jquery": "^3.7.1",

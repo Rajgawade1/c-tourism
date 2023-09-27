@@ -7,9 +7,9 @@ import { AttractionsComponent } from './attractions/attractions.component';
 
 const routes: Routes = [ 
   { path: 'home', component: DetailsComponent },
-  { path: 'package', component: PackageComponent },
+  { path: 'package/:id', component: PackageComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'attractions', component: AttractionsComponent },
+  { path: 'attractions/:id', component: AttractionsComponent },
 ];
 
 @NgModule({

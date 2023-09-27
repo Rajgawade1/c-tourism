@@ -1,9 +1,8 @@
 <div class="card">
     <div class="card-body">
-        <h5 class="card-title">Tilari</h5>
+        <h5 class="card-title">{{attractionDetails.title}}</h5>
         <div class="card-text">
-            Tilari Nagar is home to an impressive selection of attractions and
-                                experiences, making it well worth a visit.
+            <span *ngFor="let point of attractionDetails.points">{{point}}</span>
         </div>
         <div class="d-flex mt-5 justify-content-center">
             <h5 class="card-title">Image Gallary</h5>
@@ -11,24 +10,13 @@
        
         <div class="container mt-5">
             <div class="row">
-                <div class="col">
+                <div class="col" *ngFor="let image of attractionDetails.images">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/img1.png" alt="Card image cap">
+                        <img class="card-img-top" src={{image}} alt="Gallary images">
                         
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/IMG2.png" alt="Card image cap">
-                        
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/img3.png" alt="Card image cap">
-                        
-                    </div>
-                </div>
+
             </div>
         </div>
 
