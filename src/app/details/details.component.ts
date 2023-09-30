@@ -26,25 +26,42 @@ export class DetailsComponent implements OnInit {
     "alt": "Pargad Image"
   }];
 
-  attractionsData = [{
-    "title": "Tilari",
-    "description": "Tilari Nagar is home to an impressive selection of attractions and experiences, making it well worth a visit.",
-    "src": "assets/attractions/tilari.png"
-  },
-  {
-    "title": "Pargad",
-    "description": "Pargad is a beautiful fort located on the border of Maharashtra and Goa states. The fort is spread across 48 sq km area. The fort has fortified cut walls to its east, west and north sides.",
-    "src": "assets/attractions/pargad.png"
-  },
-  {
-    "title": "Amboli",
-    "description": "Amboli is a famous hill station in South Maharashtra, India. It is the last hill station before the seaside highlands of Goa. Amboli lies in the Sahyadri Hills",
-    "src": "assets/attractions/amboli.png"
-  },]
+  attractionsData = [
+    {
+      "title": "Pargad",
+      "description": "Pargad is a beautiful fort located on the border of Maharashtra and Goa states. The fort is spread across 48 sq km area. The fort has fortified cut walls to its east, west and north sides.",
+      "src": "assets/attractions/pargad.png",
+      "order": 2
+    },
+    {
+      "title": "Tilari",
+      "description": "Tilari Nagar is home to an impressive selection of attractions and experiences, making it well worth a visit.",
+      "src": "assets/attractions/tilari.png",
+      "order": 1
+    },
+    {
+      "title": "Amboli",
+      "description": "Amboli is a famous hill station in South Maharashtra, India. It is the last hill station before the seaside highlands of Goa. Amboli lies in the Sahyadri Hills",
+      "src": "assets/attractions/amboli.png",
+      "order": 3
+    },
+  ];
+  compare(a: any, b: any) {
+    if (a.order < b.order)
+      return -1;
+    else if (a.order > b.order)
+      return 1;
+    else
+      return 0;
+  }
+
+
+
   images: string[] = [];
   constructor(private s3Service: S3Service) { }
   ngOnInit(): void {
     //this.calls3Bucket();
+    this.attractionsData.sort(this.compare);
   }
 
   calls3Bucket() {
