@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as AWS from 'aws-sdk';
+import { S3Service } from '../s3.service';
 
 @Component({
   selector: 'app-details',
@@ -9,46 +10,51 @@ import * as AWS from 'aws-sdk';
 
 export class DetailsComponent implements OnInit {
   s3 = new AWS.S3();
-  taglines={
-    "pargad":"Fort Pargad: Where History Meets Majestic Beauty.",
-    "tilari":"Tilari Ghat: Nature's Gateway to Tranquility.",
-    "greenValley":"Green Valley Waterfall: Nature's Cascading Symphony."
-  }
+  sliderData = [{
+    "tagline": "Fort Pargad: Where History Meets Majestic Beauty.",
+    "src": "assets/slider/pargad.png",
+    "alt": "Pargad Image"
+  },
+  {
+    "tagline": "Tilari Ghat: Nature's Gateway to Tranquility.",
+    "src": "assets/slider/tilari.png",
+    "alt": "Pargad Image"
+  },
+  {
+    "tagline": "Fort Kalanandi: Embrace Nature's Canvas",
+    "src": "assets/slider/kalanandi.png",
+    "alt": "Pargad Image"
+  }];
+
+  attractionsData = [{
+    "title": "Tilari",
+    "description": "Tilari Nagar is home to an impressive selection of attractions and experiences, making it well worth a visit.",
+    "src": "assets/attractions/tilari.png"
+  },
+  {
+    "title": "Pargad",
+    "description": "Pargad is a beautiful fort located on the border of Maharashtra and Goa states. The fort is spread across 48 sq km area. The fort has fortified cut walls to its east, west and north sides.",
+    "src": "assets/attractions/pargad.png"
+  },
+  {
+    "title": "Amboli",
+    "description": "Amboli is a famous hill station in South Maharashtra, India. It is the last hill station before the seaside highlands of Goa. Amboli lies in the Sahyadri Hills",
+    "src": "assets/attractions/amboli.png"
+  },]
+  images: string[] = [];
+  constructor(private s3Service: S3Service) { }
   ngOnInit(): void {
     //this.calls3Bucket();
   }
 
   calls3Bucket() {
-    AWS.config.update({
-      region: 'eu-north-1',
-      accessKeyId: 'AKIASWEQOMQ4SRFW24QV',
-      secretAccessKey: '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'
-    });
-    var bucket = (new AWS.S3({
-      params: {
-        Bucket: 'website-imgaes',
-        Key: 'Slider-Images/Untitled-1.jpg',
-        contetType: ''
+    this.s3Service.getImages().then(data => {
+      if (data && data.Contents) {
+        this.images = data.Contents.map(item => {
+          return `https://${'website-imgaes'}.s3.${'eu-north-1'}.amazonaws.com/${item.Key}`;
+        });
       }
-    }));
-    var params = {
-      Bucket: 'website-imgaes',
-      //Key: 'Slider-Images/Untitled-1.jpg',
-    }
-
-    bucket.listObjects(params, (err, data) => {
-      if (err) {
-        console.log(err)
-      } else {
-        console.log(data);
-      }
+      console.log("Images : " + this.images);
     });
-    // bucket.getSignedUrl('listObjectsV2', params, (err, data) => {
-    //   if (err) {
-    //     console.log(err)
-    //   } else {
-    //     console.log(data);
-    //   }
-    // });
   }
 }

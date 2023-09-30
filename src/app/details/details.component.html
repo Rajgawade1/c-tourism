@@ -1,33 +1,15 @@
-
 <div class="">
     <ngb-carousel>
-        <ng-template ngbSlide>
+        <ng-template ngbSlide *ngFor="let image  of sliderData">
             <div class="picsum-img-wrapper">
-                <img src="assets/pargad.png" alt="Random first slide" class="img-fluid-carousel" height="200" />
+                <img src="{{image.src}}" alt="{{image.alt}}" class="img-fluid-carousel" height="200" />
             </div>
             <div class="carousel-caption">
-                <h3>{{taglines.pargad}}</h3>
-            </div>
-        </ng-template>
-        <ng-template ngbSlide>
-            <div class="picsum-img-wrapper">
-                <img src="assets/tilari.png" alt="Random first slide" class="img-fluid-carousel" height="200" />
-            </div>
-            <div class="carousel-caption">
-                <h3>{{taglines.tilari}}</h3>
-            </div>
-        </ng-template>
-        <ng-template ngbSlide>
-            <div class="picsum-img-wrapper">
-                <img src="assets/hornbill.png" alt="Random first slide" class="img-fluid-carousel" height="200" />
-            </div>
-            <div class="carousel-caption">
-                <h3>{{taglines.greenValley}}</h3>
+                <h3>{{image.tagline}}</h3>
             </div>
         </ng-template>
     </ngb-carousel>
 </div>
-
 <div class="mt-5 card">
     <div class="card-body">
         <div class="d-flex justify-content-center">
@@ -37,40 +19,14 @@
         </div>
         <div class="container mt-5">
             <div class="row">
-                <div class="col">
+                <div class="col" *ngFor="let attraction  of attractionsData">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/pargad.png" alt="Card image cap">
+                        <img class="card-img-top" src="{{attraction.src}}" alt="Card image cap">
                         <div class="card-body">
-                            <h5 class="card-title">Tilari</h5>
-                            <p class="card-text">Tilari Nagar is home to an impressive selection of attractions and
-                                experiences, making it well worth a visit.</p>
+                            <h5 class="card-title">{{attraction.title}}</h5>
+                            <p class="card-text">{{attraction.description}}</p>
                             <a [routerLink]="['/attractions','tilari']" class="btn btn-primary">Explore</a>
                         </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/tilari.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Pargad</h5>
-                            <p class="card-text"> Pargad is a beautiful fort located on the border of Maharashtra and
-                                Goa
-                                states. The fort is spread across 48 sq km area. The fort has fortified cut walls to its
-                                east, west and north sides.</p>
-                                <a [routerLink]="['/attractions','pargad']" class="btn btn-primary">Explore</a>
-                            </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/hornbill.png" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Amboli</h5>
-                            <p class="card-text">Amboli is a famous hill station in South Maharashtra, India. It is the
-                                last
-                                hill station before the seaside highlands of Goa. Amboli lies in the Sahyadri Hills </p>
-                                <a [routerLink]="['/attractions','amboli']" class="btn btn-primary">Explore</a>
-                            </div>
                     </div>
                 </div>
             </div>
