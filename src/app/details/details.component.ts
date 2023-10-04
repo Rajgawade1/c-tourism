@@ -13,17 +13,20 @@ export class DetailsComponent implements OnInit {
   sliderData = [{
     "tagline": "Fort Pargad: Where History Meets Majestic Beauty.",
     "src": "assets/slider/pargad.png",
-    "alt": "Pargad Image"
+    "alt": "Pargad Image",
+    "order":3
   },
   {
     "tagline": "Tilari Ghat: Nature's Gateway to Tranquility.",
     "src": "assets/slider/tilari.png",
-    "alt": "Pargad Image"
+    "alt": "Tilari Image",
+    "order":1
   },
   {
     "tagline": "Fort Kalanandi: Embrace Nature's Canvas",
     "src": "assets/slider/kalanandi.png",
-    "alt": "Pargad Image"
+    "alt": "Kalanandi Image",
+    "order":2
   }];
 
   attractionsData = [

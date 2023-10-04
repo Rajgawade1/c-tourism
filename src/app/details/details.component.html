@@ -1,11 +1,8 @@
 <div class="">
     <ngb-carousel>
-        <ng-template ngbSlide *ngFor="let image  of sliderData">
+        <ng-template ngbSlide *ngFor="let image  of sliderData | sortSilderPipe">
             <div class="picsum-img-wrapper">
                 <img src="{{image.src}}" alt="{{image.alt}}" class="img-fluid-carousel" height="200" />
-            </div>
-            <div class="carousel-caption">
-                <h3>{{image.tagline}}</h3>
             </div>
         </ng-template>
     </ngb-carousel>
