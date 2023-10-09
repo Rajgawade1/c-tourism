@@ -9,7 +9,6 @@ import { FooterComponent } from './footer/footer.component';
 import { DetailsComponent } from './details/details.component';
 import { PackageComponent } from './package/package.component';
 import { AboutComponent } from './about/about.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AttractionsComponent } from './attractions/attractions.component';
 import { SortSilderPipePipe } from './sort-silder-pipe.pipe';
 

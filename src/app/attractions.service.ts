@@ -12,25 +12,29 @@ export class AttractionsService {
     return heroes;
   }
 
+  
   private getAttractionDetails(id: string): any {
-    if (id === 'tilari') {
+    if (id === 'Tilari') {
       return {
         "title": "Tilari",
         "points": ["Tilari Nagar is home to an impressive selection of attractions and experiences, making it well worth a visit."],
-        "images": ["assets/pargad.png","assets/tilari.png"]
+        "imagePath": "assets/attractions/gallary/",
+        "images": ["tilari-1.png", "tilari-2.png"]
       };
-    } else if (id === 'pargad') {
+    } else if (id === 'Pargad') {
       return {
         "title": "Pargad",
-        "points": ["Pargad is home to an impressive selection of attractions and experiences, making it well worth a visit."],
-        "images": ["assets/pargad.png"]
+        "points": ["Pargad is situated at southenrmost part of Chandgad fort and is home to an impressive selection of attractions and experiences, making it well worth a visit."],
+        "imagePath": "assets/attractions/gallary/",
+        "images": ["pargad-1.png", "pargad-2.png", "pargad-3.png"]
       };
     }
-    else if (id === 'amboli') {
+    else if (id === 'Amboli') {
       return {
         "title": "Amboli",
         "points": ["Amboli is home to an impressive selection of attractions and experiences, making it well worth a visit."],
-        "images": ["assets/pargad.png"]
+        "imagePath": "assets/attractions/gallary/",
+        "images": ["amboli-1.png", "amboli-2.png"]
       };
     }
 

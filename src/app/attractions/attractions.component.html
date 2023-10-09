@@ -7,19 +7,37 @@
         <div class="d-flex mt-5 justify-content-center">
             <h5 class="card-title">Image Gallary</h5>
         </div>
-       
+
         <div class="container mt-5">
             <div class="row">
                 <div class="col" *ngFor="let image of attractionDetails.images">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src={{image}} alt="Gallary images">
-                        
+                        <img class="card-img-top" src={{attractionDetails.imagePath}}{{image}} alt="Gallary images"
+                            (click)="openFullscreen(content)">
                     </div>
                 </div>
 
             </div>
         </div>
-
     </div>
+    <ng-template #content let-modal>
+            <div class="modal-header">
+                <span class="modal-title" id="modal-basic-title">{{attractionDetails.title}} Image Gallary</span>
+                <button type="button" class="btn-close" aria-label="Close"
+                    (click)="modal.dismiss('Cross click')"></button>
+            </div>
+
+
+            <div class="modal-body">
+                <ngb-carousel>
+                    <ng-template ngbSlide *ngFor="let image  of attractionDetails.images">
+                        <div class="picsum-img-wrapper">
+                            <img src={{attractionDetails.imagePath}}{{image}} alt="Gallary Images"
+                                class="img-fluid-carousel" height="200" />
+                        </div>
+                    </ng-template>
+                </ngb-carousel>
+            </div>
+    </ng-template>
 
 </div>
