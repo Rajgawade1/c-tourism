@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  //cdnUrl:"https://d2ec66jwco4fye.cloudfront.net/",
-  cdnUrl:"/Users/rajaramgawade/website-images/attractions"
+  cdnUrl:"https://d2ec66jwco4fye.cloudfront.net/",
+  //cdnUrl:"/Users/rajaramgawade/website-images/attractions"
 };
 
 /*
