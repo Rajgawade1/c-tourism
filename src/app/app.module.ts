@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgIf } from '@angular/common';
+import { NgIf, NgOptimizedImage } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DetailsComponent } from './details/details.component';
@@ -29,7 +29,8 @@ import { SortSilderPipePipe } from './sort-silder-pipe.pipe';
     BrowserModule,
     AppRoutingModule,
     NgbCarouselModule,
-    NgIf
+    NgIf,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]
