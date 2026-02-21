@@ -23,6 +23,7 @@ export class AttractionsService {
         "imagePath": this.cdnUrl+"attractions/gallary/",
         "images": ["tilari-1.png", "tilari-2.png"]
       };
+      
     } else if (id === 'Pargad') {
       return {
         "title": "Pargad",
