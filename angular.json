@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "c-tourism:build:production"
+              "buildTarget": "c-tourism:build:production"
             },
             "development": {
-              "browserTarget": "c-tourism:build:development"
+              "buildTarget": "c-tourism:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "c-tourism:build"
+            "buildTarget": "c-tourism:build"
           }
         },
         "test": {
