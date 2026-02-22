@@ -1,5 +1,8 @@
 <div class="card">
     <div class="card-body">
+        <div class="d-flex justify-content-left">
+            <a [routerLink]="['/home']" class="btn btn-primary">Back</a>
+        </div>
         <h5 class="card-title">{{attractionDetails.title}}</h5>
         <div class="card-text">
             <span *ngFor="let point of attractionDetails.points">{{point}}</span>

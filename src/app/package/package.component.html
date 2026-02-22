@@ -1,7 +1,8 @@
 <div class="card mt-5">
     <div class="card-body">
-        <div class="d-flex justify-content-center">
-            <h5 class="card-title">Itineraray</h5>
+
+        <div class="d-flex justify-content-left">
+            <a [routerLink]="['/home']" class="btn btn-primary">Back</a>
         </div>
         <div class="card-text">
             <div class="d-flex justify-content-center">
@@ -14,6 +15,8 @@
                         </ul>
 
                     </div>
+
+                    <a [routerLink]="['/book-online', id]" class="btn btn-primary">Book Online</a>
                     <p class="mt-5">For bookings and enquiries contact us on</p>
                     
                     <div class="d-flex justify-content-center">

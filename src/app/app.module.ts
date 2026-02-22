@@ -11,8 +11,8 @@ import { PackageComponent } from './package/package.component';
 import { AboutComponent } from './about/about.component';
 import { AttractionsComponent } from './attractions/attractions.component';
 import { SortSilderPipePipe } from './sort-silder-pipe.pipe';
-
-
+import { BookOnlineComponent } from './book-online/book-online.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,14 +23,16 @@ import { SortSilderPipePipe } from './sort-silder-pipe.pipe';
     PackageComponent,
     AboutComponent,
     AttractionsComponent,
-    SortSilderPipePipe
+    SortSilderPipePipe,
+    BookOnlineComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbCarouselModule,
     NgIf,
-    NgOptimizedImage
+    NgOptimizedImage,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
