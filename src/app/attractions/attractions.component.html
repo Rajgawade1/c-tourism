@@ -15,8 +15,15 @@
             <div class="row">
                 <div class="col" *ngFor="let image of attractionDetails.images">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src={{attractionDetails.imagePath}}{{image}} alt="Gallary images"
-                            (click)="openFullscreen(content)">
+                        <picture>
+                            <!-- Modern WebP source -->
+                            <source
+                                [srcset]="attractionDetails.srcWebp || ((attractionDetails.imagePath + image) | replaceExt:'.webp')"
+                                type="image/webp">
+                            <!-- Fallback image for older browsers -->
+                            <img class="card-img-top" src]="attractionDetails.imagePath + image"
+                                [alt]="attractionDetails.title" (click)="openFullscreen(content)" />
+                        </picture>
                     </div>
                 </div>
 
@@ -24,23 +31,32 @@
         </div>
     </div>
     <ng-template #content let-modal>
-            <div class="modal-header">
-                <span class="modal-title" id="modal-basic-title">{{attractionDetails.title}} Image Gallary</span>
-                <button type="button" class="btn-close" aria-label="Close"
-                    (click)="modal.dismiss('Cross click')"></button>
-            </div>
+        <div class="modal-header">
+            <span class="modal-title" id="modal-basic-title">{{attractionDetails.title}} Image Gallary</span>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+        </div>
 
 
-            <div class="modal-body">
-                <ngb-carousel>
-                    <ng-template ngbSlide *ngFor="let image  of attractionDetails.images">
-                        <div class="picsum-img-wrapper">
-                            <img src={{attractionDetails.imagePath}}{{image}} alt="Gallary Images"
-                                class="img-fluid-carousel" height="200" />
-                        </div>
-                    </ng-template>
-                </ngb-carousel>
-            </div>
+        <div class="modal-body">
+            <ngb-carousel>
+                <ng-template ngbSlide *ngFor="let image  of attractionDetails.images">
+                    <div class="picsum-img-wrapper">
+
+                          <picture>
+                            <!-- Modern WebP source -->
+                            <source
+                                [srcset]="attractionDetails.srcWebp || ((attractionDetails.imagePath + image) | replaceExt:'.webp')"
+                                type="image/webp">
+                            <!-- Fallback image for older browsers -->
+                            <img class="img-fluid-carousel" src]="attractionDetails.imagePath + image"
+                                [alt]="attractionDetails.title" height="200"/>
+                        </picture>
+
+                
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
     </ng-template>
 
 </div>

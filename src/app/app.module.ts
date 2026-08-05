@@ -13,6 +13,9 @@ import { AttractionsComponent } from './attractions/attractions.component';
 import { SortSilderPipePipe } from './sort-silder-pipe.pipe';
 import { BookOnlineComponent } from './book-online/book-online.component';
 import { FormsModule } from '@angular/forms';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { authInterceptor } from './core/interceptors/auth.interceptor';
+import { ReplaceExtPipe } from './replace-ext-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     AboutComponent,
     AttractionsComponent,
     SortSilderPipePipe,
-    BookOnlineComponent
+    BookOnlineComponent,
+    ReplaceExtPipe
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,9 @@ import { FormsModule } from '@angular/forms';
     NgOptimizedImage,
     FormsModule
   ],
-  providers: [],
+  providers: [provideHttpClient(
+      withInterceptors([authInterceptor]) // Registers functional interceptors
+    )],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

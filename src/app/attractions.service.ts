@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { environment } from './../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -8,10 +9,17 @@ import { environment } from './../environments/environment';
 })
 export class AttractionsService {
   cdnUrl:string=environment.cdnUrl;
-  constructor() { }
+  private apiUrl = 'http://localhost:8080/site/packages';
+
+  constructor(private http: HttpClient) {}
+
   getAttractions(id: string): Observable<any> {
     const heroes = of(this.getAttractionDetails(id));
     return heroes;
+  }
+
+  getDestinations(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 
   

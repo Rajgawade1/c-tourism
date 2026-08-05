@@ -26,6 +26,8 @@ export class DetailsComponent implements OnInit {
     this._detailsService.getTourPackages().subscribe(tourPackages => {
       this.tourPackages = tourPackages;
       this.chunkedTourPackages = this.chunkArray(this.tourPackages, 3);
+    },error=>{
+      console.log(error);
     });
 
 

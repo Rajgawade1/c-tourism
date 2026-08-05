@@ -1,19 +1,25 @@
 <div class="">
     <ngb-carousel>
-        <ng-template ngbSlide *ngFor="let image  of sliderData | sortSilderPipe">
-            <div class="picsum-img-wrapper">
-                 <img src="{{image.src}}" alt="{{image.alt}}" class="img-fluid-carousel" height="200" /> 
+        <ng-template ngbSlide *ngFor="let image of sliderData | sortSilderPipe">
+            <div class="pFTilari">
+                <picture>
+                    <!-- Modern WebP source (replace or transform extension if needed) -->
+                    <source [srcset]="image.srcWebp || (image.src | replaceExt:'.webp')" type="image/webp">
+
+                    <!-- Fallback image for older browsers (PNG/JPG) -->
+                    <img [src]="image.src" [alt]="image.alt" class="img-fluid-carousel" height="200" />
+                </picture>
             </div>
         </ng-template>
     </ngb-carousel>
-</div> 
+</div>
 
 <div class="mt-5 card">
     <div class="card-body">
         <div class="d-flex justify-content-center mb-4">
             <h5 class="card-title">Tour Packages</h5>
         </div>
-        
+
         <!-- Desktop Slider (3 components) -->
         <div class="d-none d-md-block">
             <ngb-carousel [showNavigationArrows]="true" [showNavigationIndicators]="true" [interval]="0">
@@ -24,7 +30,8 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{tourPackage.title}}</h5>
                                     <p class="card-text text-truncate-3">{{tourPackage.description}}</p>
-                                    <a [routerLink]="['/package', tourPackage.packageId]" class="btn btn-primary">Explore</a>
+                                    <a [routerLink]="['/package', tourPackage.packageId]"
+                                        class="btn btn-primary">Explore</a>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +49,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{tourPackage.title}}</h5>
                                 <p class="card-text">{{tourPackage.description}}</p>
-                                <a [routerLink]="['/package', tourPackage.packageId]" class="btn btn-primary">Explore</a>
+                                <a [routerLink]="['/package', tourPackage.packageId]"
+                                    class="btn btn-primary">Explore</a>
                             </div>
                         </div>
                     </div>
@@ -65,11 +73,24 @@
                     <div class="row px-5 pb-5">
                         <div class="col-md-4" *ngFor="let attraction of chunk">
                             <div class="card h-100">
-                                <img class="card-img-top" [src]="attraction.src" [alt]="attraction.title">
+
+                                <picture>
+                                    <!-- Modern WebP source (replace or transform extension if needed) -->
+                                    <source [srcset]="attraction.srcWebp || (attraction.src | replaceExt:'.webp')"
+                                        type="image/webp">
+
+                                    <!-- Fallback image for older browsers (PNG/JPG) -->
+                                    <img class="card-img-top" [src]="attraction.src" [alt]="attraction.title"
+                                        class="img-fluid-carousel" />
+
+                                </picture>
+
+
                                 <div class="card-body">
                                     <h5 class="card-title">{{attraction.title}}</h5>
                                     <p class="card-text text-truncate-3">{{attraction.description}}</p>
-                                    <a [routerLink]="['/attractions', attraction.title]" class="btn btn-primary">Explore</a>
+                                    <a [routerLink]="['/attractions', attraction.title]"
+                                        class="btn btn-primary">Explore</a>
                                 </div>
                             </div>
                         </div>
@@ -84,7 +105,20 @@
                 <ng-template ngbSlide *ngFor="let attraction of attractionsData">
                     <div class="px-4 pb-5">
                         <div class="card">
-                            <img class="card-img-top" [src]="attraction.src" [alt]="attraction.title">
+                            <picture>
+                                <!-- Modern WebP source (replace or transform extension if needed) -->
+                                <source [srcset]="attraction.srcWebp || (attraction.src | replaceExt:'.webp')"
+                                    type="image/webp">
+                                <!-- Fallback image for older browsers (PNG/JPG) -->
+                                <img class="card-img-top" [src]="attraction.src" [alt]="attraction.title"
+                                    class="img-fluid-carousel" />
+
+                            </picture>
+
+
+
+
+
                             <div class="card-body">
                                 <h5 class="card-title">{{attraction.title}}</h5>
                                 <p class="card-text">{{attraction.description}}</p>
