@@ -1,6 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'replaceExt' })
+@Pipe({
+    name: 'replaceExt',
+    standalone: true
+})
 export class ReplaceExtPipe implements PipeTransform {
   transform(url: string, newExt: string): string {
     if (!url) return '';

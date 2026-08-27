@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { AttractionsService } from '../attractions.service';
 import { Action } from 'rxjs/internal/scheduler/Action';
-import { ActivatedRoute } from '@angular/router';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { NgbModal, NgbCarousel, NgbSlide } from '@ng-bootstrap/ng-bootstrap';
+import { ReplaceExtPipe } from '../replace-ext-pipe.pipe';
+import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-attractions',
-  templateUrl: './attractions.component.html',
-  styleUrls: ['./attractions.component.css']
+    selector: 'app-attractions',
+    templateUrl: './attractions.component.html',
+    styleUrls: ['./attractions.component.css'],
+    standalone: true,
+    imports: [RouterLink, NgFor, NgbCarousel, NgbSlide, ReplaceExtPipe]
 })
 export class AttractionsComponent implements OnInit {
   constructor(private _attractionsService: AttractionsService, private _activatedroute: ActivatedRoute,private _modalService: NgbModal) { }

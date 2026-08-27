@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { DetailsService } from '../details.service';
+import { ReplaceExtPipe } from '../replace-ext-pipe.pipe';
+import { SortSilderPipePipe } from '../sort-silder-pipe.pipe';
+import { RouterLink } from '@angular/router';
+import { NgFor } from '@angular/common';
+import { NgbCarousel, NgbSlide } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.component.html',
-  styleUrls: ['./details.component.css']
+    selector: 'app-details',
+    templateUrl: './details.component.html',
+    styleUrls: ['./details.component.css'],
+    standalone: true,
+    imports: [NgbCarousel, NgFor, NgbSlide, RouterLink, SortSilderPipePipe, ReplaceExtPipe]
 })
 
 export class DetailsComponent implements OnInit {

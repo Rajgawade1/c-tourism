@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-book-online',
-  templateUrl: './book-online.component.html',
-  styleUrls: ['./book-online.component.css']
+    selector: 'app-book-online',
+    templateUrl: './book-online.component.html',
+    styleUrls: ['./book-online.component.css'],
+    standalone: true,
+    imports: [RouterLink, FormsModule]
 })
 export class BookOnlineComponent implements OnInit {
 
